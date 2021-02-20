@@ -15,6 +15,8 @@ class LIGIndexViewController: LIGViewController {
   @IBOutlet weak var btnSignup: UIButton!
   @IBOutlet weak var btnLogin: UIButton!
   
+  // MARK: - View Controller Life Cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -37,6 +39,25 @@ class LIGIndexViewController: LIGViewController {
     self.btnLogin.titleLabel?.font = UIFont.setBold(fontSize: 18.0)
   }
 
-
+  // MARK: - Actions
+  
+  @IBAction func signupAction(_ sender: Any) {
+    let nc = LIGStoryboardManager.getAuthenticationNC()
+    nc.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.setBold(fontSize: 18.0)]
+    if let vc = nc.viewControllers.first as? LIGAuthenticationViewController {
+      vc.title = "Chat app"
+    }
+    
+    if let scene = UIApplication.shared.connectedScenes.first,
+       let delegate = scene.delegate as? SceneDelegate,
+       let window = delegate.window {
+      window.rootViewController = nc
+    }
+  }
+  
+  @IBAction func loginAction(_ sender: Any) {
+    
+  }
+  
 }
 
