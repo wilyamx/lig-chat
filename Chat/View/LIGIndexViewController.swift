@@ -21,16 +21,20 @@ class LIGIndexViewController: LIGViewController {
     self.viewContainer.backgroundColor = .clear
     
     self.lblApp.textColor = UIColor.Theme.darkGray
+    self.lblApp.font = UIFont.setBold(fontSize: 18.0)
+    self.lblApp.backgroundColor = .clear
     
     self.btnSignup.setTitleColor(.white, for: .normal)
     self.btnSignup.setTitle("Sign up", for: .normal)
     self.btnSignup.backgroundColor = UIColor.Theme.darkGreen
     self.btnSignup.layer.cornerRadius = 5.0
+    self.btnSignup.titleLabel?.font = UIFont.setBold(fontSize: 18.0)
     
     self.btnLogin.setTitleColor(.white, for: .normal)
     self.btnLogin.setTitle("Login", for: .normal)
     self.btnLogin.backgroundColor = UIColor.Theme.lightGreen
     self.btnLogin.layer.cornerRadius = 5.0
+    self.btnLogin.titleLabel?.font = UIFont.setBold(fontSize: 18.0)
   }
 
 
