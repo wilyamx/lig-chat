@@ -1,24 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Index View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LIGIndexViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0g-0a-0BZ">
+                                <rect key="frame" x="10" y="162.5" width="300" height="243"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index-logo" translatesAutoresizingMaskIntoConstraints="NO" id="2cb-Bx-bIT">
+                                        <rect key="frame" x="96.5" y="0.0" width="107" height="97"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="107" id="2L7-jH-nbM"/>
+                                            <constraint firstAttribute="height" constant="97" id="QxB-yl-0G0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9O-PV-zpL">
+                                        <rect key="frame" x="0.0" y="102" width="300" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="GzD-f0-vVs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPt-Cw-u6d">
+                                        <rect key="frame" x="0.0" y="153" width="300" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="WRo-VZ-PRs"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHb-aK-KI9">
+                                        <rect key="frame" x="0.0" y="203" width="300" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="iA4-Yz-RwA"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="tyK-xK-GDO"/>
+                                        </constraints>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fHb-aK-KI9" secondAttribute="trailing" id="2UH-Kg-Bhl"/>
+                                    <constraint firstItem="K9O-PV-zpL" firstAttribute="top" secondItem="2cb-Bx-bIT" secondAttribute="bottom" constant="5" id="ROu-Xl-ipd"/>
+                                    <constraint firstAttribute="bottom" secondItem="fHb-aK-KI9" secondAttribute="bottom" id="XgR-Y1-3R1"/>
+                                    <constraint firstAttribute="trailing" secondItem="rPt-Cw-u6d" secondAttribute="trailing" id="bDQ-xg-cIx"/>
+                                    <constraint firstItem="K9O-PV-zpL" firstAttribute="leading" secondItem="D0g-0a-0BZ" secondAttribute="leading" id="bt6-mN-v1X"/>
+                                    <constraint firstItem="2cb-Bx-bIT" firstAttribute="top" secondItem="D0g-0a-0BZ" secondAttribute="top" id="c2n-TO-5Ia"/>
+                                    <constraint firstItem="rPt-Cw-u6d" firstAttribute="leading" secondItem="D0g-0a-0BZ" secondAttribute="leading" id="hbW-eP-zEn"/>
+                                    <constraint firstAttribute="trailing" secondItem="K9O-PV-zpL" secondAttribute="trailing" id="kys-ja-bMR"/>
+                                    <constraint firstItem="2cb-Bx-bIT" firstAttribute="centerX" secondItem="D0g-0a-0BZ" secondAttribute="centerX" id="oAi-MN-opr"/>
+                                    <constraint firstItem="fHb-aK-KI9" firstAttribute="top" secondItem="rPt-Cw-u6d" secondAttribute="bottom" constant="10" id="pCg-gp-Ug1"/>
+                                    <constraint firstItem="fHb-aK-KI9" firstAttribute="leading" secondItem="D0g-0a-0BZ" secondAttribute="leading" id="s0p-Jc-gYP"/>
+                                    <constraint firstAttribute="height" constant="243" id="t7M-5k-Gbn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D0g-0a-0BZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BGh-NQ-eHM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D0g-0a-0BZ" secondAttribute="trailing" constant="10" id="JT0-TP-PnT"/>
+                            <constraint firstItem="D0g-0a-0BZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Lfx-GC-l1E"/>
+                            <constraint firstItem="D0g-0a-0BZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eSK-KI-XEa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="fHb-aK-KI9" id="rjh-5W-8nY"/>
+                        <outlet property="btnSignup" destination="rPt-Cw-u6d" id="dyg-Bh-mQ3"/>
+                        <outlet property="imgvLogo" destination="2cb-Bx-bIT" id="ZAR-xu-c7o"/>
+                        <outlet property="lblApp" destination="K9O-PV-zpL" id="QZd-s6-8cd"/>
+                        <outlet property="viewContainer" destination="D0g-0a-0BZ" id="2h8-Q9-Flx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140.625" y="128.87323943661971"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="index-logo" width="107" height="96.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
