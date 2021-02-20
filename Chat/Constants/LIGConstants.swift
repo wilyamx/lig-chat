@@ -14,3 +14,6 @@ struct LIGReference {
   static let appDelegate = UIApplication.shared.delegate as! AppDelegate
 }
 
+struct LIGConstants {
+  static let DEFAULT_CORNER_RADIUS: CGFloat = 5.0
+}

@@ -15,10 +15,12 @@ class LIGAuthenticationViewController: LIGViewController {
   @IBOutlet weak var viewUsername: UIView!
   @IBOutlet weak var viewUsernameError: UIView!
   @IBOutlet weak var viewUserNameErrorHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var txtUsername: UITextField!
   
   @IBOutlet weak var viewPassword: UIView!
   @IBOutlet weak var viewPasswordError: UIView!
   @IBOutlet weak var viewPasswordErrorHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var txtPassword: UILabel!
   
   @IBOutlet weak var btnOperation: UIButton!
   @IBOutlet weak var btnChangeView: UIButton!
@@ -54,6 +56,39 @@ class LIGAuthenticationViewController: LIGViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.viewUsername.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
+    self.viewUsername.backgroundColor = UIColor.Theme.textBgColor
+    
+    self.viewPassword.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
+    self.viewPassword.backgroundColor = UIColor.Theme.textBgColor
+    
+    self.btnOperation.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
+    
+    self.txtUsername.textColor = UIColor.Theme.gray
+    self.txtUsername.font = UIFont.setRegular(fontSize: 16.0)
+    
+    self.txtPassword.textColor = UIColor.Theme.gray
+    self.txtPassword.font = UIFont.setRegular(fontSize: 16.0)
+    
+    self.lblTerms.textColor = UIColor.Theme.gray
+    self.lblTerms.font = UIFont.setRegular(fontSize: 14.0)
+    
+    self.btnOperation.setTitleColor(.white, for: .normal)
+    self.btnOperation.setTitle("Login", for: .normal)
+    self.btnOperation.backgroundColor = UIColor.Theme.lightGreen
+    self.btnOperation.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
+    self.btnOperation.titleLabel?.font = UIFont.setBold(fontSize: 18.0)
+    
+    let attributes: [NSAttributedString.Key: Any] = [
+      .font: UIFont.systemFont(ofSize: 14),
+      .foregroundColor: UIColor.Theme.gray,
+      .underlineStyle: NSUnderlineStyle.single.rawValue
+    ]
+    let attributeString = NSMutableAttributedString(
+      string: "Your button text",
+      attributes: attributes)
+    self.btnChangeView.setAttributedTitle(attributeString, for: .normal)
     
     self.isValidUsername = true
     self.isValidPassword = true

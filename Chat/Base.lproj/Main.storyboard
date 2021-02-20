@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-ef-igC">
-                                <rect key="frame" x="10" y="70" width="300" height="40"/>
+                                <rect key="frame" x="10" y="74" width="300" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wlS-G9-w6L">
                                         <rect key="frame" x="10" y="11" width="280" height="18.5"/>
@@ -130,7 +130,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5H-Fx-Keq">
-                                <rect key="frame" x="10" y="110" width="300" height="30"/>
+                                <rect key="frame" x="10" y="114" width="300" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value is incorrect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81K-Or-ydv">
                                         <rect key="frame" x="10" y="4.5" width="280" height="21"/>
@@ -148,7 +148,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcI-P9-n9e">
-                                <rect key="frame" x="10" y="160" width="300" height="40"/>
+                                <rect key="frame" x="10" y="164" width="300" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ER-FN-kDC">
                                         <rect key="frame" x="10" y="9.5" width="280" height="21"/>
@@ -166,7 +166,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQl-U3-IZP">
-                                <rect key="frame" x="10" y="200" width="300" height="30"/>
+                                <rect key="frame" x="10" y="204" width="300" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value is incorrect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhz-RO-sdH">
                                         <rect key="frame" x="10" y="4.5" width="280" height="21"/>
@@ -184,7 +184,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-q7-cLe">
-                                <rect key="frame" x="10" y="250" width="300" height="40"/>
+                                <rect key="frame" x="10" y="254" width="300" height="40"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ase-wu-p8a"/>
@@ -194,14 +194,14 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMt-Mq-8kk">
-                                <rect key="frame" x="137" y="300" width="46" height="25"/>
+                                <rect key="frame" x="137" y="304" width="46" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="33L-bR-555"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odk-kN-Mp9">
-                                <rect key="frame" x="10" y="335" width="300" height="223"/>
+                                <rect key="frame" x="10" y="339" width="300" height="101.5"/>
                                 <string key="text">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use. Others will be able to find you by searching for your email or phone number when provided.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -217,14 +217,13 @@
                             <constraint firstItem="g5H-Fx-Keq" firstAttribute="leading" secondItem="1G1-cK-cdF" secondAttribute="leading" constant="10" id="7rI-Is-RaU"/>
                             <constraint firstItem="1G1-cK-cdF" firstAttribute="trailing" secondItem="cdb-ef-igC" secondAttribute="trailing" constant="10" id="8GJ-So-kA0"/>
                             <constraint firstItem="CMt-Mq-8kk" firstAttribute="top" secondItem="g8B-q7-cLe" secondAttribute="bottom" constant="10" id="9oU-hF-b3v"/>
-                            <constraint firstItem="cdb-ef-igC" firstAttribute="top" secondItem="1G1-cK-cdF" secondAttribute="top" constant="26" id="Hdv-u1-kWz"/>
+                            <constraint firstItem="cdb-ef-igC" firstAttribute="top" secondItem="1G1-cK-cdF" secondAttribute="top" constant="30" id="Hdv-u1-kWz"/>
                             <constraint firstItem="g8B-q7-cLe" firstAttribute="top" secondItem="HQl-U3-IZP" secondAttribute="bottom" constant="20" id="Kas-Vj-9m5"/>
                             <constraint firstItem="CMt-Mq-8kk" firstAttribute="centerX" secondItem="1G1-cK-cdF" secondAttribute="centerX" id="LZI-mG-4em"/>
                             <constraint firstItem="1G1-cK-cdF" firstAttribute="trailing" secondItem="odk-kN-Mp9" secondAttribute="trailing" constant="10" id="ZQd-Oz-FLf"/>
                             <constraint firstItem="1G1-cK-cdF" firstAttribute="trailing" secondItem="g5H-Fx-Keq" secondAttribute="trailing" constant="10" id="bof-MJ-Chg"/>
                             <constraint firstItem="1G1-cK-cdF" firstAttribute="trailing" secondItem="mcI-P9-n9e" secondAttribute="trailing" constant="10" id="cFB-OT-FgK"/>
                             <constraint firstItem="HQl-U3-IZP" firstAttribute="leading" secondItem="1G1-cK-cdF" secondAttribute="leading" constant="10" id="cRj-ib-9Q8"/>
-                            <constraint firstItem="1G1-cK-cdF" firstAttribute="bottom" secondItem="odk-kN-Mp9" secondAttribute="bottom" constant="10" id="dag-a5-ovN"/>
                             <constraint firstItem="mcI-P9-n9e" firstAttribute="top" secondItem="g5H-Fx-Keq" secondAttribute="bottom" constant="20" id="i62-G4-J7g"/>
                             <constraint firstItem="cdb-ef-igC" firstAttribute="leading" secondItem="1G1-cK-cdF" secondAttribute="leading" constant="10" id="moJ-ht-J8h"/>
                             <constraint firstItem="HQl-U3-IZP" firstAttribute="top" secondItem="mcI-P9-n9e" secondAttribute="bottom" id="s1G-BO-02L"/>
@@ -239,6 +238,8 @@
                         <outlet property="btnChangeView" destination="CMt-Mq-8kk" id="pfh-4l-6DR"/>
                         <outlet property="btnOperation" destination="g8B-q7-cLe" id="cgs-EQ-xpW"/>
                         <outlet property="lblTerms" destination="odk-kN-Mp9" id="Ivx-Na-rGe"/>
+                        <outlet property="txtPassword" destination="4ER-FN-kDC" id="4H1-in-rDb"/>
+                        <outlet property="txtUsername" destination="wlS-G9-w6L" id="mFP-ix-KwZ"/>
                         <outlet property="viewPassword" destination="mcI-P9-n9e" id="tp6-AR-xFi"/>
                         <outlet property="viewPasswordError" destination="HQl-U3-IZP" id="2N0-og-6Yo"/>
                         <outlet property="viewPasswordErrorHeightConstraint" destination="hTB-FC-QlX" id="z67-N3-ZMv"/>

@@ -29,13 +29,13 @@ class LIGIndexViewController: LIGViewController {
     self.btnSignup.setTitleColor(.white, for: .normal)
     self.btnSignup.setTitle("Sign up", for: .normal)
     self.btnSignup.backgroundColor = UIColor.Theme.darkGreen
-    self.btnSignup.layer.cornerRadius = 5.0
+    self.btnSignup.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
     self.btnSignup.titleLabel?.font = UIFont.setBold(fontSize: 18.0)
     
     self.btnLogin.setTitleColor(.white, for: .normal)
     self.btnLogin.setTitle("Login", for: .normal)
     self.btnLogin.backgroundColor = UIColor.Theme.lightGreen
-    self.btnLogin.layer.cornerRadius = 5.0
+    self.btnLogin.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
     self.btnLogin.titleLabel?.font = UIFont.setBold(fontSize: 18.0)
   }
 
