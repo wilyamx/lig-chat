@@ -31,7 +31,7 @@ class LIGAuthenticationViewModel: LIGViewModel {
       }
     }
     else {
-      onFailure(true, true)
+      onFailure(true, false)
     }
   }
   

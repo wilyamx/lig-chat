@@ -1,5 +1,11 @@
 # LIG Chat App
 
+## Featured List
+
+1. MVVM Design Pattern
+1. Cocoapods for some 3rd-party libraries
+1. Realm Database for local storage
+
 ## XCode Project Initial Setup
 
 1. **Install Cocoapods for library dependencies** `$ sudo gem install cocoapods`
