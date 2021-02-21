@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     if let loginUser = LIGUserManager.shared.getLoginUser(),
        loginUser.isLogin == true {
-      LIGReference.appDelegate.log.info("\(DebugInfoKey.realmDb.rawValue) login-user '\(loginUser.username ?? "")'")
+      LIGReference.appDelegate.log.info("\(DebugInfoKey.realmDb.rawValue) login-user '\(loginUser.username ?? "?")' (\(loginUser.id ?? 0))")
       
       let navigationController = LIGStoryboardManager.getMessagingNC()
       window.rootViewController = navigationController

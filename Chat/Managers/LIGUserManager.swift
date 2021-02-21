@@ -23,6 +23,14 @@ class LIGUserManager {
     return users.filter{ $0.isActive == true }
   }
   
+  public func getUserById(id: Int32) -> LIGUserSchema? {
+    return self.database.getById(id: id)
+  }
+  
+  public func getUserByUsername(username: String) -> LIGUserSchema? {
+    return self.database.getByUsername(username: username)
+  }
+  
   public func createUser(user: LIGUserSchema,
                          completion: @escaping ()->()) {
     let newUser = LIGUserModel(user: user)
@@ -40,7 +48,7 @@ class LIGUserManager {
       self.updateUserProfile(
         userProfile: loginUser,
         completion: {
-          
+          LIGReference.appDelegate.log.info("\(DebugInfoKey.realmDb.rawValue) logged-out-user '\(loginUser.username ?? "?")' (\(loginUser.id ?? 0))")
       })
     }
   }

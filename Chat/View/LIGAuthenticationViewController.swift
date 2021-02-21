@@ -97,11 +97,9 @@ class LIGAuthenticationViewController: LIGViewController {
         onSuccess: { success in
           LIGStoryboardManager.switchToMessaging()
         },
-        onFailure: { error in
-          LIGPopupManager.shared.popUpErrorDetails(
-            presenter: self,
-            title: "Alert",
-            message: error)
+        onFailure: { (username, password) in
+          self.isValidUsername = !username
+          self.isValidPassword = !password
         })
     }
     // user signup

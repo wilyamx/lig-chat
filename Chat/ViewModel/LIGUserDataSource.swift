@@ -30,6 +30,10 @@ class LIGUserDataSource: LIGDataSourceProtocol {
     return realm.object(ofType: LIGUserModel.self, forPrimaryKey: id).map { $0.entity } ?? nil
   }
   
+  func getByUsername(username: String) -> T? {
+    return realm.object(ofType: LIGUserModel.self, forPrimaryKey: username).map { $0.entity } ?? nil
+  }
+  
   func insert(item: T, completion:@escaping(LIGResponse<String>)->()) {
     try! realm.write {
       realm.add(LIGUserModel(user: item))
@@ -60,5 +64,9 @@ class LIGUserDataSource: LIGDataSourceProtocol {
   
   func deleteById(id: Int32, completion: @escaping (LIGResponse<String>) -> ()) {
     
+  }
+  
+  func nextDataId() -> Int32 {
+    return (self.realm.objects(LIGUserModel.self).max(ofProperty: "id") as Int32? ?? 0) + 1
   }
 }
