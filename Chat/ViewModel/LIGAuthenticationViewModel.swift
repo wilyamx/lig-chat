@@ -9,20 +9,6 @@
 import Foundation
 
 class LIGAuthenticationViewModel: LIGViewModel {
-  func isSignupValid(username: String, password: String
-    ) -> Bool {
-    guard username.isEmpty || password.isEmpty else {
-      return false
-    }
-    return true
-  }
-  
-  func isLoginValid(username: String, password: String) -> Bool {
-    guard username.isEmpty || password.isEmpty else {
-      return false
-    }
-    return true
-  }
   
   func login(
     username: String,

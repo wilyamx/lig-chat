@@ -65,11 +65,25 @@ class LIGAuthenticationViewController: LIGViewController {
   // MARK: - Actions
   
   @IBAction func operationAction(_ sender: Any) {
+    // entry validation
     guard let username = self.txtUsername.text,
-          let password = self.txtPassword.text else {
-        return
+          let password = self.txtPassword.text,
+          username.count > 0,
+          password.count > 0 else {
+
+      if let username = self.txtUsername.text,
+         let password = self.txtPassword.text {
+        self.isValidUsername = self.isValidCharacterCount(fieldValue: username)
+        self.isValidPassword = self.isValidCharacterCount(fieldValue: password)
+      }
+      return
     }
     
+    // hide the error indicator
+    self.isValidUsername = self.isValidCharacterCount(fieldValue: username)
+    self.isValidPassword = self.isValidCharacterCount(fieldValue: password)
+    
+    // backend request
     if self.operationName == "Login" {
       self.viewModel.login(
         username: username,
@@ -149,8 +163,14 @@ class LIGAuthenticationViewController: LIGViewController {
       attributes: attributes)
     self.btnChangeView.setAttributedTitle(attributeString, for: .normal)
     
-    self.isValidUsername = false
-    self.isValidPassword = false
+    self.txtUsername.placeholder = "User name"
+    self.txtUsername.text = ""
+    
+    self.txtPassword.placeholder = "password"
+    self.txtPassword.text = ""
+    
+    self.isValidUsername = true
+    self.isValidPassword = true
   }
     
   /*
@@ -165,4 +185,7 @@ class LIGAuthenticationViewController: LIGViewController {
 
   // MARK: - Private Methods
   
+  private func isValidCharacterCount(fieldValue: String) -> Bool {
+    return fieldValue.count > 0 && fieldValue.count >= 8 && fieldValue.count <= 16
+  }
 }
