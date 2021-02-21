@@ -12,6 +12,8 @@ class LIGAuthenticationViewController: LIGViewController {
 
   let ERROR_HEIGHT: CGFloat = 30.0
   
+  public lazy var viewModel = LIGAuthenticationViewModel()
+  
   @IBOutlet weak var viewUsername: UIView!
   @IBOutlet weak var viewUsernameError: UIView!
   @IBOutlet weak var viewUserNameErrorHeightConstraint: NSLayoutConstraint!
@@ -63,15 +65,43 @@ class LIGAuthenticationViewController: LIGViewController {
   // MARK: - Actions
   
   @IBAction func operationAction(_ sender: Any) {
+    guard let username = self.txtUsername.text,
+          let password = self.txtPassword.text else {
+        return
+    }
     
+    if self.operationName == "Login" {
+      self.viewModel.login(
+        username: username,
+        password: password,
+        onSuccess: { success in
+          print("]>> sakto login")
+        },
+        onFailure: { error in
+          print("]>> error login")
+        })
+    }
+    else if self.operationName == "Sign up" {
+      self.viewModel.signup(
+        username: username,
+        password: password,
+        onSuccess: { success in
+          print("]>> sakto signup")
+        },
+        onFailure: { error in
+          print("]>> error signup")
+        })
+    }
   }
   
   @IBAction func changeViewAction(_ sender: Any) {
     if self.changeViewName == "Login" {
-      LIGStoryboardManager.authenticateUser(operationName: "Login", changeViewName: "Sign up")
+      LIGStoryboardManager.authenticateUser(operationName: "Login",
+                                            changeViewName: "Sign up")
     }
     else if self.changeViewName == "Sign up" {
-      LIGStoryboardManager.authenticateUser(operationName: "Sign up", changeViewName: "Login")
+      LIGStoryboardManager.authenticateUser(operationName: "Sign up",
+                                            changeViewName: "Login")
     }
   }
   
@@ -133,4 +163,6 @@ class LIGAuthenticationViewController: LIGViewController {
   }
   */
 
+  // MARK: - Private Methods
+  
 }

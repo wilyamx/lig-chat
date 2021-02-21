@@ -18,6 +18,8 @@
 		A221959E25E1708900CC3C02 /* LIGStoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221959D25E1708900CC3C02 /* LIGStoryboardManager.swift */; };
 		A22195A125E170AA00CC3C02 /* LIGUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22195A025E170AA00CC3C02 /* LIGUserManager.swift */; };
 		A22195A825E17E4D00CC3C02 /* LIGConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22195A725E17E4D00CC3C02 /* LIGConstants.swift */; };
+		A2527BFE25E1EB64002D1596 /* LIGViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527BFD25E1EB64002D1596 /* LIGViewModel.swift */; };
+		A2527C0125E1EBA9002D1596 /* LIGAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527C0025E1EBA9002D1596 /* LIGAuthenticationViewModel.swift */; };
 		A2910AF325E0D94200C71B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2910AF225E0D94200C71B21 /* AppDelegate.swift */; };
 		A2910AF525E0D94200C71B21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2910AF425E0D94200C71B21 /* SceneDelegate.swift */; };
 		A2910AFC25E0D94400C71B21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2910AFB25E0D94400C71B21 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		A221959D25E1708900CC3C02 /* LIGStoryboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGStoryboardManager.swift; sourceTree = "<group>"; };
 		A22195A025E170AA00CC3C02 /* LIGUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGUserManager.swift; sourceTree = "<group>"; };
 		A22195A725E17E4D00CC3C02 /* LIGConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGConstants.swift; sourceTree = "<group>"; };
+		A2527BFD25E1EB64002D1596 /* LIGViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGViewModel.swift; sourceTree = "<group>"; };
+		A2527C0025E1EBA9002D1596 /* LIGAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		A2910AEF25E0D94200C71B21 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2910AF225E0D94200C71B21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2910AF425E0D94200C71B21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		A2527BFC25E1EB49002D1596 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2527BFD25E1EB64002D1596 /* LIGViewModel.swift */,
+				A2527C0025E1EBA9002D1596 /* LIGAuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A2910AE625E0D94200C71B21 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,7 @@
 		A2910AF125E0D94200C71B21 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				A2527BFC25E1EB49002D1596 /* ViewModel */,
 				A221957A25E1535F00CC3C02 /* Constants */,
 				A221957925E1534F00CC3C02 /* Managers */,
 				A221957825E1534000CC3C02 /* Extensions */,
@@ -288,7 +302,9 @@
 				A221959825E16BD300CC3C02 /* LIGSignUpViewController.swift in Sources */,
 				A221959525E16BA500CC3C02 /* LIGLoginViewController.swift in Sources */,
 				A221959E25E1708900CC3C02 /* LIGStoryboardManager.swift in Sources */,
+				A2527BFE25E1EB64002D1596 /* LIGViewModel.swift in Sources */,
 				A2910AF325E0D94200C71B21 /* AppDelegate.swift in Sources */,
+				A2527C0125E1EBA9002D1596 /* LIGAuthenticationViewModel.swift in Sources */,
 				A221958925E15DFF00CC3C02 /* LIGIndexViewController.swift in Sources */,
 				A2910AF525E0D94200C71B21 /* SceneDelegate.swift in Sources */,
 				A221957C25E153CC00CC3C02 /* UIColor+Extension.swift in Sources */,
