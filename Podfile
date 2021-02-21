@@ -6,11 +6,12 @@ use_frameworks!
 project './Chat.xcodeproj'
 
 def pods_defined
+  pod 'IQKeyboardManagerSwift', '~> 6.5.0'
+  pod 'Localize-Swift', '~> 2.0.0'
 	pod 'Moya', '~> 12.0.1'
 	pod 'Moya-ObjectMapper', '~> 2.8'
-	pod 'IQKeyboardManagerSwift', '~> 6.5.0'
 	pod 'RealmSwift', '~> 3.18.0'
-	pod 'Localize-Swift', '~> 2.0.0'
+  pod 'SwiftyBeaver', '~> 1.6'
 end
 
 target 'Chat' do

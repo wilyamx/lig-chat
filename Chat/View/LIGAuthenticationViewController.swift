@@ -89,10 +89,10 @@ class LIGAuthenticationViewController: LIGViewController {
         username: username,
         password: password,
         onSuccess: { success in
-          print("]>> sakto login")
+          LIGReference.appDelegate.log.info("sakto login")
         },
         onFailure: { error in
-          print("]>> error login")
+          LIGReference.appDelegate.log.info(error)
         })
     }
     else if self.operationName == "Sign up" {
@@ -100,10 +100,10 @@ class LIGAuthenticationViewController: LIGViewController {
         username: username,
         password: password,
         onSuccess: { success in
-          print("]>> sakto signup")
+          LIGReference.appDelegate.log.info("sakto signup")
         },
         onFailure: { error in
-          print("]>> error signup")
+          LIGReference.appDelegate.log.info(error)
         })
     }
   }

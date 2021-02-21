@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import SwiftyBeaver
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+  var log = SwiftyBeaver.self
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    let console = ConsoleDestination()
+    console.format = "$L: $M $X"
+    console.minLevel = .info
+    self.log.addDestination(console)
+    
     return true
   }
 
