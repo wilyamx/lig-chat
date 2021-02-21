@@ -16,6 +16,7 @@ class LIGAuthenticationViewModel: LIGViewModel {
     onSuccess: @escaping (_ success: Bool) -> Void,
     onFailure: @escaping (_ username: Bool, _ password: Bool) -> Void) {
     
+    // check for existing username
     if var userAccount = LIGUserManager.shared.getUserByUsername(username: username) {
       if userAccount.password == password {
         userAccount.isLogin = true
@@ -38,29 +39,14 @@ class LIGAuthenticationViewModel: LIGViewModel {
     username: String,
     password: String,
     onSuccess: @escaping (_ success: Bool) -> Void,
-    onFailure: @escaping (_ error: String) -> Void) {
+    onFailure: @escaping (_ username: Bool, _ password: Bool) -> Void) {
       
-    if let loginUser = LIGUserManager.shared.getLoginUser(),
-       let loginUsername = loginUser.username {
-      // with the same username exist
-      if loginUsername == username {
-        onFailure("Username '\(username)' already exist!")
-      }
-      else {
-        // no the same username exist
-        let userSchema = LIGUserSchema(id: LIGUserManager.shared.database.nextDataId(),
-                                       username: username, password: password,
-                                       isLogin: true, isActive: false)
-        LIGUserManager.shared.createUser(
-          user: userSchema,
-          completion: {
-            onSuccess(true)
-        })
-      }
+    // check for existing username
+    if let _ = LIGUserManager.shared.getUserByUsername(username: username) {
+      onFailure(true, false)
     }
-    
     else {
-      // no login username exist
+      // no existing username
       let userSchema = LIGUserSchema(id: LIGUserManager.shared.database.nextDataId(),
                                      username: username, password: password,
                                      isLogin: true, isActive: false)
@@ -69,7 +55,6 @@ class LIGAuthenticationViewModel: LIGViewModel {
         completion: {
           onSuccess(true)
       })
-      
     }
     
   }
