@@ -42,21 +42,13 @@ class LIGIndexViewController: LIGViewController {
   // MARK: - Actions
   
   @IBAction func signupAction(_ sender: Any) {
-    let nc = LIGStoryboardManager.getAuthenticationNC()
-    nc.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.setBold(fontSize: 18.0)]
-    if let vc = nc.viewControllers.first as? LIGAuthenticationViewController {
-      vc.title = "Chat app"
-    }
-    
-    if let scene = UIApplication.shared.connectedScenes.first,
-       let delegate = scene.delegate as? SceneDelegate,
-       let window = delegate.window {
-      window.rootViewController = nc
-    }
+    LIGStoryboardManager.authenticateUser(operationName: "Sign up",
+                                          changeViewName: "Login")
   }
   
   @IBAction func loginAction(_ sender: Any) {
-    
+    LIGStoryboardManager.authenticateUser(operationName: "Login",
+                                          changeViewName: "Sign up")
   }
   
 }

@@ -16,11 +16,13 @@ class LIGAuthenticationViewController: LIGViewController {
   @IBOutlet weak var viewUsernameError: UIView!
   @IBOutlet weak var viewUserNameErrorHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var txtUsername: UITextField!
+  @IBOutlet weak var lblUsernameError: UILabel!
   
   @IBOutlet weak var viewPassword: UIView!
   @IBOutlet weak var viewPasswordError: UIView!
   @IBOutlet weak var viewPasswordErrorHeightConstraint: NSLayoutConstraint!
-  @IBOutlet weak var txtPassword: UILabel!
+  @IBOutlet weak var txtPassword: UITextField!
+  @IBOutlet weak var lblPasswordError: UILabel!
   
   @IBOutlet weak var btnOperation: UIButton!
   @IBOutlet weak var btnChangeView: UIButton!
@@ -54,6 +56,27 @@ class LIGAuthenticationViewController: LIGViewController {
     }
   }
   
+  // Explicit
+  var operationName: String = "Login"
+  var changeViewName: String = "Sign up"
+  
+  // MARK: - Actions
+  
+  @IBAction func operationAction(_ sender: Any) {
+    
+  }
+  
+  @IBAction func changeViewAction(_ sender: Any) {
+    if self.changeViewName == "Login" {
+      LIGStoryboardManager.authenticateUser(operationName: "Login", changeViewName: "Sign up")
+    }
+    else if self.changeViewName == "Sign up" {
+      LIGStoryboardManager.authenticateUser(operationName: "Sign up", changeViewName: "Login")
+    }
+  }
+  
+  // MARK: - View Controller Life Cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -63,11 +86,17 @@ class LIGAuthenticationViewController: LIGViewController {
     self.viewPassword.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
     self.viewPassword.backgroundColor = UIColor.Theme.textBgColor
     
+    self.viewUsernameError.backgroundColor = .clear
+    self.viewPasswordError.backgroundColor = .clear
+    self.lblUsernameError.textColor = UIColor.Theme.red
+    self.lblPasswordError.textColor = UIColor.Theme.red
+    self.lblUsernameError.font = UIFont.setRegular(fontSize: 14.0)
+    self.lblPasswordError.font = UIFont.setRegular(fontSize: 14.0)
+    
     self.btnOperation.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
     
     self.txtUsername.textColor = UIColor.Theme.gray
     self.txtUsername.font = UIFont.setRegular(fontSize: 16.0)
-    
     self.txtPassword.textColor = UIColor.Theme.gray
     self.txtPassword.font = UIFont.setRegular(fontSize: 16.0)
     
@@ -75,7 +104,7 @@ class LIGAuthenticationViewController: LIGViewController {
     self.lblTerms.font = UIFont.setRegular(fontSize: 14.0)
     
     self.btnOperation.setTitleColor(.white, for: .normal)
-    self.btnOperation.setTitle("Login", for: .normal)
+    self.btnOperation.setTitle(self.operationName, for: .normal)
     self.btnOperation.backgroundColor = UIColor.Theme.lightGreen
     self.btnOperation.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
     self.btnOperation.titleLabel?.font = UIFont.setBold(fontSize: 18.0)
@@ -86,15 +115,14 @@ class LIGAuthenticationViewController: LIGViewController {
       .underlineStyle: NSUnderlineStyle.single.rawValue
     ]
     let attributeString = NSMutableAttributedString(
-      string: "Your button text",
+      string: self.changeViewName,
       attributes: attributes)
     self.btnChangeView.setAttributedTitle(attributeString, for: .normal)
     
-    self.isValidUsername = true
-    self.isValidPassword = true
+    self.isValidUsername = false
+    self.isValidPassword = false
   }
     
-
   /*
   // MARK: - Navigation
 
