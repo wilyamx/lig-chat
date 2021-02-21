@@ -21,3 +21,13 @@ struct LIGConstants {
 public enum DebugInfoKey: String {
   case realmDb = "[REALMDB]>>"
 }
+
+struct LIGRequestError {
+    var errorCode: Int = 0
+    var errorMessage: String = ""
+}
+
+enum LIGResponse<T> {
+    case succeed(T)
+    case failed(LIGRequestError)
+}

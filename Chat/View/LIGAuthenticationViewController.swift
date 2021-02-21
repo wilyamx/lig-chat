@@ -83,7 +83,13 @@ class LIGAuthenticationViewController: LIGViewController {
     self.isValidUsername = self.isValidCharacterCount(fieldValue: username)
     self.isValidPassword = self.isValidCharacterCount(fieldValue: password)
     
-    // backend request
+    if let isValidUsername = self.isValidUsername,
+       let isValidPassword = self.isValidPassword,
+       (isValidUsername == false || isValidPassword == false) {
+      return
+    }
+    
+    // user login
     if self.operationName == "Login" {
       self.viewModel.login(
         username: username,
@@ -95,6 +101,7 @@ class LIGAuthenticationViewController: LIGViewController {
           LIGReference.appDelegate.log.info(error)
         })
     }
+    // user signup
     else if self.operationName == "Sign up" {
       self.viewModel.signup(
         username: username,

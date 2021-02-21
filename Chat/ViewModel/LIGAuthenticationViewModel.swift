@@ -23,7 +23,39 @@ class LIGAuthenticationViewModel: LIGViewModel {
     password: String,
     onSuccess: @escaping (_ success: Bool) -> Void,
     onFailure: @escaping (_ error: String) -> Void) {
-      onFailure("invalid signup credentials")
+      
+    if let loginUser = LIGUserManager.shared.getLoginUser(),
+       let loginUsername = loginUser.username {
+      // with the same username exist
+      if loginUsername == username {
+        onFailure("Username \(username) already exist!")
+      }
+      else {
+        // no the same username exist
+        let userSchema = LIGUserSchema(id: 0,
+                                       username: username, password: password,
+                                       isLogin: true, isActive: true)
+        LIGUserManager.shared.createUser(
+          user: userSchema,
+          completion: {
+            onSuccess(true)
+        })
+      }
+    }
+    
+    else {
+      // no login username exist
+      let userSchema = LIGUserSchema(id: 0,
+                                     username: username, password: password,
+                                     isLogin: true, isActive: true)
+      LIGUserManager.shared.createUser(
+        user: userSchema,
+        completion: {
+          onSuccess(true)
+      })
+      
+    }
+    
   }
 
 }

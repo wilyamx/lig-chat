@@ -7,3 +7,39 @@
 //
 
 import Foundation
+
+class LIGUserManager {
+  static let shared = LIGUserManager()
+  
+  var database = LIGUserDataSource()
+  
+  public func getLoginUser() -> LIGUserSchema? {
+    let users = self.database.getAllUsers()
+    return users.filter{ $0.isLogin == true }.first
+  }
+  
+  public func getActiveUsers() -> [LIGUserSchema] {
+    let users = self.database.getAllUsers()
+      return users.filter{ $0.isActive == true }
+  }
+  
+  public func createUser(user: LIGUserSchema,
+                         completion: @escaping ()->()) {
+      let newUser = LIGUserModel(user: user)
+      newUser.isLogin = true
+      
+      self.database.insert(item: newUser.entity) { (message) in
+          completion()
+      }
+  }
+  
+  public func switchLoginUser(user: LIGUserSchema) {
+    
+  }
+  
+  public func deleteLoginUser() {
+      if let loginUser = getLoginUser() {
+        self.database.deleteById(id: loginUser.id!, completion: {_ in })
+      }
+  }
+}
