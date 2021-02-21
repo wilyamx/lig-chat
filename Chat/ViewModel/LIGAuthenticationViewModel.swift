@@ -28,7 +28,7 @@ class LIGAuthenticationViewModel: LIGViewModel {
        let loginUsername = loginUser.username {
       // with the same username exist
       if loginUsername == username {
-        onFailure("Username \(username) already exist!")
+        onFailure("Username '\(username)' already exist!")
       }
       else {
         // no the same username exist

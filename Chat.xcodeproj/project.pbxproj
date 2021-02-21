@@ -25,6 +25,7 @@
 		A2527C1B25E2257B002D1596 /* LIGUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527C1A25E2257B002D1596 /* LIGUserDataSource.swift */; };
 		A2527C2225E2270E002D1596 /* LIGUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527C2125E2270E002D1596 /* LIGUserModel.swift */; };
 		A2527C2625E22994002D1596 /* LIGUserSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527C2525E22994002D1596 /* LIGUserSchema.swift */; };
+		A2527C2925E26639002D1596 /* LIGPopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527C2825E26639002D1596 /* LIGPopupManager.swift */; };
 		A2910AF325E0D94200C71B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2910AF225E0D94200C71B21 /* AppDelegate.swift */; };
 		A2910AF525E0D94200C71B21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2910AF425E0D94200C71B21 /* SceneDelegate.swift */; };
 		A2910AFC25E0D94400C71B21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2910AFB25E0D94400C71B21 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		A2527C1A25E2257B002D1596 /* LIGUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGUserDataSource.swift; sourceTree = "<group>"; };
 		A2527C2125E2270E002D1596 /* LIGUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIGUserModel.swift; sourceTree = "<group>"; };
 		A2527C2525E22994002D1596 /* LIGUserSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGUserSchema.swift; sourceTree = "<group>"; };
+		A2527C2825E26639002D1596 /* LIGPopupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGPopupManager.swift; sourceTree = "<group>"; };
 		A2910AEF25E0D94200C71B21 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2910AF225E0D94200C71B21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2910AF425E0D94200C71B21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				A221959D25E1708900CC3C02 /* LIGStoryboardManager.swift */,
 				A22195A025E170AA00CC3C02 /* LIGUserManager.swift */,
 				A2527C0F25E20C47002D1596 /* LIGDatabaseManager.swift */,
+				A2527C2825E26639002D1596 /* LIGPopupManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				A221958925E15DFF00CC3C02 /* LIGIndexViewController.swift in Sources */,
 				A2910AF525E0D94200C71B21 /* SceneDelegate.swift in Sources */,
 				A221957C25E153CC00CC3C02 /* UIColor+Extension.swift in Sources */,
+				A2527C2925E26639002D1596 /* LIGPopupManager.swift in Sources */,
 				A2527C1025E20C47002D1596 /* LIGDatabaseManager.swift in Sources */,
 				A221958125E1592E00CC3C02 /* LIGViewController.swift in Sources */,
 				A2527C1B25E2257B002D1596 /* LIGUserDataSource.swift in Sources */,

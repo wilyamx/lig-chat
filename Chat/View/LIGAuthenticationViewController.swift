@@ -98,7 +98,10 @@ class LIGAuthenticationViewController: LIGViewController {
           LIGReference.appDelegate.log.info("sakto login")
         },
         onFailure: { error in
-          LIGReference.appDelegate.log.info(error)
+          LIGPopupManager.shared.popUpErrorDetails(
+            presenter: self,
+            title: "Alert",
+            message: error)
         })
     }
     // user signup
@@ -110,7 +113,10 @@ class LIGAuthenticationViewController: LIGViewController {
           LIGReference.appDelegate.log.info("sakto signup")
         },
         onFailure: { error in
-          LIGReference.appDelegate.log.info(error)
+          LIGPopupManager.shared.popUpErrorDetails(
+            presenter: self,
+            title: "Alert",
+            message: error)
         })
     }
   }
