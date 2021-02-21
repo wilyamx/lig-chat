@@ -17,3 +17,7 @@ struct LIGReference {
 struct LIGConstants {
   static let DEFAULT_CORNER_RADIUS: CGFloat = 5.0
 }
+
+public enum DebugInfoKey: String {
+  case realmDb = "[REALMDB]>>"
+}

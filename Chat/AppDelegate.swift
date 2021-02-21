@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     console.minLevel = .info
     self.log.addDestination(console)
     
+    // initialize the local data storage
+    // log the location of realm database
+    let dbManager: LIGDatabaseManager = LIGDatabaseManager()
+    let _ = dbManager.dbPath()
+    
     return true
   }
 
