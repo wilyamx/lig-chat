@@ -20,17 +20,29 @@ class LIGUserManager {
   
   public func getActiveUsers() -> [LIGUserSchema] {
     let users = self.database.getAllUsers()
-      return users.filter{ $0.isActive == true }
+    return users.filter{ $0.isActive == true }
   }
   
   public func createUser(user: LIGUserSchema,
                          completion: @escaping ()->()) {
-      let newUser = LIGUserModel(user: user)
-      newUser.isLogin = true
+    let newUser = LIGUserModel(user: user)
+    newUser.isLogin = true
+    
+    self.database.insert(item: newUser.entity) { (message) in
+        completion()
+    }
+  }
+  
+  public func logoutUser() {
+    if var loginUser = getLoginUser() {
+      loginUser.isLogin = false
       
-      self.database.insert(item: newUser.entity) { (message) in
-          completion()
-      }
+      self.updateUserProfile(
+        userProfile: loginUser,
+        completion: {
+          
+      })
+    }
   }
   
   public func switchLoginUser(user: LIGUserSchema) {
@@ -40,6 +52,14 @@ class LIGUserManager {
   public func deleteLoginUser() {
       if let loginUser = getLoginUser() {
         self.database.deleteById(id: loginUser.id!, completion: {_ in })
+      }
+  }
+  
+  public func updateUserProfile(
+    userProfile: LIGUserSchema,
+    completion: @escaping () -> ()) {
+    self.database.update(item: userProfile) { (response) in
+          completion()
       }
   }
 }

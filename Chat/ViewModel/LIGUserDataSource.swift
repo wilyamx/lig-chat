@@ -33,12 +33,25 @@ class LIGUserDataSource: LIGDataSourceProtocol {
   func insert(item: T, completion:@escaping(LIGResponse<String>)->()) {
     try! realm.write {
       realm.add(LIGUserModel(user: item))
-      completion(LIGResponse.succeed("SUCCESS"))
+      completion(LIGResponse.succeed("user-insert-success"))
     }
   }
   
   func update(item: LIGUserSchema, completion: @escaping (LIGResponse<String>) -> ()) {
+    let t = LIGUserModel(user: item)
     
+    try! realm.write {
+      guard let q = self.realm.object(ofType: LIGUserModel.self, forPrimaryKey: item.username) else {
+          completion(LIGResponse.succeed("user-update-not-found"))
+          return
+      }
+      
+      q.password = t.password
+      q.isActive = t.isActive
+      q.isLogin = t.isLogin
+      
+      completion(LIGResponse.succeed("user-update-success"))
+    }
   }
   
   func clean(completion: @escaping (LIGResponse<String>) -> ()) {

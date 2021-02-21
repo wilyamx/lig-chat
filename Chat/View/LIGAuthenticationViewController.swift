@@ -95,7 +95,7 @@ class LIGAuthenticationViewController: LIGViewController {
         username: username,
         password: password,
         onSuccess: { success in
-          LIGReference.appDelegate.log.info("sakto login")
+          LIGStoryboardManager.switchToMessaging()
         },
         onFailure: { error in
           LIGPopupManager.shared.popUpErrorDetails(
@@ -110,7 +110,7 @@ class LIGAuthenticationViewController: LIGViewController {
         username: username,
         password: password,
         onSuccess: { success in
-          LIGReference.appDelegate.log.info("sakto signup")
+          LIGStoryboardManager.switchToMessaging()
         },
         onFailure: { error in
           LIGPopupManager.shared.popUpErrorDetails(

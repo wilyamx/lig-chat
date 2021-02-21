@@ -11,7 +11,7 @@
         <!--Index View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LIGIndexViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LIGIndexViewController" id="BYZ-38-t0r" customClass="LIGIndexViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,6 +258,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GN5-KH-ylu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="937.5" y="827.11267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jWG-r8-97u">
+            <objects>
+                <navigationController storyboardIdentifier="LIGMessagingNavigationController" id="oee-ko-ACp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bxI-FQ-jBV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wXg-gf-Nwu" kind="relationship" relationship="rootViewController" id="BGt-A2-O2f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqL-LJ-4yW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="1554"/>
+        </scene>
+        <!--Messaging View Controller-->
+        <scene sceneID="AFL-bs-24t">
+            <objects>
+                <viewController id="wXg-gf-Nwu" customClass="LIGMessagingViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lln-ih-eck">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1Xt-3d-D3i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="is5-nS-5Q1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbA-29-ZC1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="1554"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0eZ-wO-jMD">
