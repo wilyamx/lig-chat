@@ -29,6 +29,12 @@ class LIGMessagingViewModel: LIGViewModel {
     self.messages.append(LIGChatMessageDO(userId: 4, name: "Evaluator", message: "I just checked it. Thanks!"))
     self.messages.append(LIGChatMessageDO(userId: 2, name: "Mark", message: "Hi guys, what's up?"))
     self.messages.append(LIGChatMessageDO(userId: 3, name: "April", message: "Hi Mark, I stay Cebu now"))
+    
+    // testing the bubble auto-layout content
+    self.messages.append(LIGChatMessageDO(userId: 1, name: "May", message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+    self.messages.append(LIGChatMessageDO(userId: 1, name: "May", message: "Lorem Ipsum"))
+    self.messages.append(LIGChatMessageDO(userId: 4, name: "Evaluator", message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+    self.messages.append(LIGChatMessageDO(userId: 4, name: "Evaluator", message: "Lorem"))
    
     completion(self.messages)
   }
