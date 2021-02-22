@@ -12,6 +12,7 @@ class LIGMessagingViewController: LIGViewController {
 
   // MARK: - View Controller Life Cycle
   
+  @IBOutlet weak var messageHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var tblMessages: UITableView!
   
   @IBOutlet weak var viewFooterLineSeparator: UIView!
@@ -19,6 +20,9 @@ class LIGMessagingViewController: LIGViewController {
   @IBOutlet weak var viewMessageBg: UIView!
   @IBOutlet weak var txtvMessage: UITextView!
   @IBOutlet weak var btnSend: UIButton!
+  
+  let SEND_MESSAGE_MIN_HEIGHT: CGFloat = CGFloat(30.0)
+  let SEND_MESSAGE_MAX_HEIGHT: CGFloat = CGFloat(160.0)
   
   public lazy var viewModel = LIGMessagingViewModel()
   
@@ -93,6 +97,8 @@ class LIGMessagingViewController: LIGViewController {
     
     // ---
     
+    self.messageHeightConstraint.constant = SEND_MESSAGE_MIN_HEIGHT
+    
     self.viewFooterLineSeparator.backgroundColor = UIColor.Theme.gray.withAlphaComponent(0.25)
     self.viewFooter.backgroundColor = .white
     
@@ -102,6 +108,8 @@ class LIGMessagingViewController: LIGViewController {
     self.txtvMessage.backgroundColor = .clear
     self.txtvMessage.font = UIFont.setRegular(fontSize: 14)
     self.txtvMessage.textColor = UIColor.Theme.gray
+    self.txtvMessage.isScrollEnabled = false
+    self.txtvMessage.delegate = self
     
     self.btnSend.setTitleColor(.white, for: .normal)
     self.btnSend.setTitle("send", for: .normal)
@@ -121,6 +129,20 @@ class LIGMessagingViewController: LIGViewController {
           self.tblMessages.reloadData()
         }
     })
+  }
+  
+  private func autoResizeHeightSendMessage() {
+    let sizeToFitIn = CGSize(width: self.txtvMessage.bounds.size.width,
+                             height: CGFloat(MAXFLOAT))
+    let newSize = self.txtvMessage.sizeThatFits(sizeToFitIn)
+    if newSize.height <= SEND_MESSAGE_MAX_HEIGHT {
+      self.messageHeightConstraint.constant = newSize.height
+      self.txtvMessage.isScrollEnabled = false
+    }
+    else {
+      self.messageHeightConstraint.constant = SEND_MESSAGE_MAX_HEIGHT
+      self.txtvMessage.isScrollEnabled = true
+    }
   }
   
   /*
@@ -176,5 +198,11 @@ extension LIGMessagingViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //    let data = self.messages[indexPath.row]
 //    DebugInfo.log(info: "\(DebugInfoKey.messaging.rawValue) selected a message \(data.message) (\(data.messageId)) at index (\(indexPath.row))")
+  }
+}
+
+extension LIGMessagingViewController: UITextViewDelegate {
+  func textViewDidChange(_ textView: UITextView) {
+      self.autoResizeHeightSendMessage()
   }
 }
