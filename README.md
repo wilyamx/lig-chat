@@ -5,6 +5,7 @@
 1. **MVVM** Design Pattern
 1. **Cocoapods** for some 3rd-party libraries
 1. **Realm Database** for local storage
+1. **Logging to XCode console** for easy debugging 
 
 ## XCode Project Initial Setup
 
@@ -18,4 +19,3 @@
 
 1. **Use existing credentials.** User name: **Evaluator**, password: **88888888**
 1. **The app will remember logged-in user** after signup or login when terminated.
-1.  
