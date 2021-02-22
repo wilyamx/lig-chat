@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="LIGMemberChatMessageTableViewCell" customModule="Chat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="285" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="285" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Her-cU-l6S">
+                        <rect key="frame" x="10" y="10" width="240" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmc-h4-9z9">
+                                <rect key="frame" x="10" y="10" width="220" height="22"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Dmc-h4-9z9" secondAttribute="bottom" constant="10" id="HEM-sb-qiy"/>
+                            <constraint firstItem="Dmc-h4-9z9" firstAttribute="top" secondItem="Her-cU-l6S" secondAttribute="top" constant="10" id="KHw-nf-Y81"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="a5l-IU-y8D"/>
+                            <constraint firstItem="Dmc-h4-9z9" firstAttribute="leading" secondItem="Her-cU-l6S" secondAttribute="leading" constant="10" id="wtN-f0-xU2"/>
+                            <constraint firstAttribute="trailing" secondItem="Dmc-h4-9z9" secondAttribute="trailing" constant="10" id="xSK-cA-0an"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0y-3n-Vgz">
+                        <rect key="frame" x="10" y="57" width="240" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Yeb-a9-sxg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Her-cU-l6S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6Db-13-HHr"/>
+                    <constraint firstItem="i0y-3n-Vgz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="FOL-ei-fot"/>
+                    <constraint firstAttribute="bottom" secondItem="i0y-3n-Vgz" secondAttribute="bottom" constant="10" id="UC0-Yf-q5b"/>
+                    <constraint firstItem="i0y-3n-Vgz" firstAttribute="trailing" secondItem="Her-cU-l6S" secondAttribute="trailing" id="ZA0-hq-kam"/>
+                    <constraint firstItem="Her-cU-l6S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fkU-j7-uGd"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Her-cU-l6S" secondAttribute="trailing" constant="35" id="oxN-iq-fUX"/>
+                    <constraint firstItem="i0y-3n-Vgz" firstAttribute="top" secondItem="Her-cU-l6S" secondAttribute="bottom" constant="5" id="xdb-dy-cMe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblMessage" destination="Dmc-h4-9z9" id="wet-t5-E2v"/>
+                <outlet property="lblUsername" destination="i0y-3n-Vgz" id="6dB-zm-kXS"/>
+                <outlet property="viewBubble" destination="Her-cU-l6S" id="aWR-WU-tzk"/>
+            </connections>
+            <point key="canvasLocation" x="-241.30434782608697" y="45.535714285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

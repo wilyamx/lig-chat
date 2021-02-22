@@ -20,6 +20,7 @@ struct LIGConstants {
 
 public enum DebugInfoKey: String {
   case realmDb = "[REALMDB]>>"
+  case messaging = "[MESSAGING]>>"
 }
 
 struct LIGRequestError {

@@ -9,7 +9,6 @@
 
 import ObjectMapper
 import RealmSwift
-//import ObjectMapper_Realm
 
 class LIGUserModel: Object, Mappable {
   @objc dynamic var id: Int32 = 0

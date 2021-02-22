@@ -282,14 +282,29 @@
                     <view key="view" contentMode="scaleToFill" id="lln-ih-eck">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tB0-yW-wg2">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Xt-3d-D3i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tB0-yW-wg2" firstAttribute="top" secondItem="1Xt-3d-D3i" secondAttribute="top" id="Bor-wi-Zq2"/>
+                            <constraint firstItem="tB0-yW-wg2" firstAttribute="leading" secondItem="1Xt-3d-D3i" secondAttribute="leading" id="JyO-fm-iMk"/>
+                            <constraint firstItem="tB0-yW-wg2" firstAttribute="trailing" secondItem="1Xt-3d-D3i" secondAttribute="trailing" id="be2-Sj-rqL"/>
+                            <constraint firstItem="tB0-yW-wg2" firstAttribute="bottom" secondItem="1Xt-3d-D3i" secondAttribute="bottom" id="zQJ-T7-t6W"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="is5-nS-5Q1"/>
+                    <connections>
+                        <outlet property="tblMessages" destination="tB0-yW-wg2" id="uWW-rp-qqr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbA-29-ZC1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="1554"/>
+            <point key="canvasLocation" x="937.5" y="1553.8732394366198"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0eZ-wO-jMD">
