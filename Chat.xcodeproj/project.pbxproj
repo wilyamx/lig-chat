@@ -27,13 +27,14 @@
 		A2527C2C25E26B13002D1596 /* LIGMessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527C2B25E26B13002D1596 /* LIGMessagingViewController.swift */; };
 		A2527C3025E28B78002D1596 /* LIGMessagingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2527C2F25E28B78002D1596 /* LIGMessagingViewModel.swift */; };
 		A2682A6E25E34AEB0039A86D /* LIGDisplayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2682A6D25E34AEB0039A86D /* LIGDisplayObject.swift */; };
-		A2682A7125E34B2C0039A86D /* LIGChatMessageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2682A7025E34B2C0039A86D /* LIGChatMessageVM.swift */; };
+		A2682A7125E34B2C0039A86D /* LIGChatMessageDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2682A7025E34B2C0039A86D /* LIGChatMessageDO.swift */; };
 		A2682A7525E34FD10039A86D /* LIGChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2682A7425E34FD10039A86D /* LIGChatMessageTableViewCell.swift */; };
 		A2682A7925E350600039A86D /* LIGOwnerChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2682A7725E350600039A86D /* LIGOwnerChatMessageTableViewCell.swift */; };
 		A2682A7A25E350600039A86D /* LIGOwnerChatMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2682A7825E350600039A86D /* LIGOwnerChatMessageTableViewCell.xib */; };
 		A2682A7E25E352280039A86D /* LIGMemberChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2682A7C25E352280039A86D /* LIGMemberChatMessageTableViewCell.swift */; };
 		A2682A7F25E352280039A86D /* LIGMemberChatMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2682A7D25E352280039A86D /* LIGMemberChatMessageTableViewCell.xib */; };
 		A2682A8425E35EB10039A86D /* LIGViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2682A8325E35EB10039A86D /* LIGViewCellProtocol.swift */; };
+		A2682B0E25E398CF0039A86D /* LIGMessagingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2682B0D25E398CF0039A86D /* LIGMessagingFooterView.swift */; };
 		A2910AF325E0D94200C71B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2910AF225E0D94200C71B21 /* AppDelegate.swift */; };
 		A2910AF525E0D94200C71B21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2910AF425E0D94200C71B21 /* SceneDelegate.swift */; };
 		A2910AFC25E0D94400C71B21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2910AFB25E0D94400C71B21 /* Assets.xcassets */; };
@@ -64,13 +65,14 @@
 		A2527C2B25E26B13002D1596 /* LIGMessagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGMessagingViewController.swift; sourceTree = "<group>"; };
 		A2527C2F25E28B78002D1596 /* LIGMessagingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGMessagingViewModel.swift; sourceTree = "<group>"; };
 		A2682A6D25E34AEB0039A86D /* LIGDisplayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGDisplayObject.swift; sourceTree = "<group>"; };
-		A2682A7025E34B2C0039A86D /* LIGChatMessageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGChatMessageVM.swift; sourceTree = "<group>"; };
+		A2682A7025E34B2C0039A86D /* LIGChatMessageDO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGChatMessageDO.swift; sourceTree = "<group>"; };
 		A2682A7425E34FD10039A86D /* LIGChatMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGChatMessageTableViewCell.swift; sourceTree = "<group>"; };
 		A2682A7725E350600039A86D /* LIGOwnerChatMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGOwnerChatMessageTableViewCell.swift; sourceTree = "<group>"; };
 		A2682A7825E350600039A86D /* LIGOwnerChatMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LIGOwnerChatMessageTableViewCell.xib; sourceTree = "<group>"; };
 		A2682A7C25E352280039A86D /* LIGMemberChatMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGMemberChatMessageTableViewCell.swift; sourceTree = "<group>"; };
 		A2682A7D25E352280039A86D /* LIGMemberChatMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LIGMemberChatMessageTableViewCell.xib; sourceTree = "<group>"; };
 		A2682A8325E35EB10039A86D /* LIGViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGViewCellProtocol.swift; sourceTree = "<group>"; };
+		A2682B0D25E398CF0039A86D /* LIGMessagingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGMessagingFooterView.swift; sourceTree = "<group>"; };
 		A2910AEF25E0D94200C71B21 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2910AF225E0D94200C71B21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2910AF425E0D94200C71B21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		A221957625E1531300CC3C02 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2682B0425E38FCA0039A86D /* CustomView */,
 				A2682A6C25E34A7B0039A86D /* Model */,
 				A2682A6B25E34A460039A86D /* TableViewCell */,
 				A221958825E15DFF00CC3C02 /* LIGIndexViewController.swift */,
@@ -210,9 +213,17 @@
 			isa = PBXGroup;
 			children = (
 				A2682A6D25E34AEB0039A86D /* LIGDisplayObject.swift */,
-				A2682A7025E34B2C0039A86D /* LIGChatMessageVM.swift */,
+				A2682A7025E34B2C0039A86D /* LIGChatMessageDO.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A2682B0425E38FCA0039A86D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				A2682B0D25E398CF0039A86D /* LIGMessagingFooterView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		A2910AE625E0D94200C71B21 = {
@@ -385,6 +396,7 @@
 				A221959E25E1708900CC3C02 /* LIGStoryboardManager.swift in Sources */,
 				A2527BFE25E1EB64002D1596 /* LIGViewModel.swift in Sources */,
 				A2910AF325E0D94200C71B21 /* AppDelegate.swift in Sources */,
+				A2682B0E25E398CF0039A86D /* LIGMessagingFooterView.swift in Sources */,
 				A2527C2225E2270E002D1596 /* LIGUserModel.swift in Sources */,
 				A2527C0125E1EBA9002D1596 /* LIGAuthenticationViewModel.swift in Sources */,
 				A2527C2C25E26B13002D1596 /* LIGMessagingViewController.swift in Sources */,
@@ -395,7 +407,7 @@
 				A2682A8425E35EB10039A86D /* LIGViewCellProtocol.swift in Sources */,
 				A2527C1025E20C47002D1596 /* LIGDatabaseManager.swift in Sources */,
 				A221958125E1592E00CC3C02 /* LIGViewController.swift in Sources */,
-				A2682A7125E34B2C0039A86D /* LIGChatMessageVM.swift in Sources */,
+				A2682A7125E34B2C0039A86D /* LIGChatMessageDO.swift in Sources */,
 				A2527C1B25E2257B002D1596 /* LIGUserDataSource.swift in Sources */,
 				A221959B25E16F6200CC3C02 /* LIGAuthenticationViewController.swift in Sources */,
 			);

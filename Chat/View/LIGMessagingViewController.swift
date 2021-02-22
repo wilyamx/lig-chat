@@ -14,6 +14,12 @@ class LIGMessagingViewController: LIGViewController {
   
   @IBOutlet weak var tblMessages: UITableView!
   
+  @IBOutlet weak var viewFooterLineSeparator: UIView!
+  @IBOutlet weak var viewFooter: UIView!
+  @IBOutlet weak var viewMessageBg: UIView!
+  @IBOutlet weak var txtvMessage: UITextView!
+  @IBOutlet weak var btnSend: UIButton!
+  
   public lazy var viewModel = LIGMessagingViewModel()
   
   private var messages: [LIGChatMessageDO] = [LIGChatMessageDO]()
@@ -31,6 +37,10 @@ class LIGMessagingViewController: LIGViewController {
     self.getChannelMessages()
    
     self.initializeUI()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
   }
   
   // MARK: - Handlers
@@ -80,6 +90,24 @@ class LIGMessagingViewController: LIGViewController {
     self.tblMessages.tableFooterView = UIView()
     self.tblMessages.separatorStyle = .none
     self.tblMessages.backgroundColor = self.view.backgroundColor
+    
+    // ---
+    
+    self.viewFooterLineSeparator.backgroundColor = UIColor.Theme.gray.withAlphaComponent(0.25)
+    self.viewFooter.backgroundColor = .white
+    
+    self.viewMessageBg.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
+    self.viewMessageBg.backgroundColor = UIColor.Theme.textBgColor
+    
+    self.txtvMessage.backgroundColor = .clear
+    self.txtvMessage.font = UIFont.setRegular(fontSize: 14)
+    self.txtvMessage.textColor = UIColor.Theme.gray
+    
+    self.btnSend.setTitleColor(.white, for: .normal)
+    self.btnSend.setTitle("send", for: .normal)
+    self.btnSend.backgroundColor = UIColor.Theme.gray
+    self.btnSend.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
+    self.btnSend.titleLabel?.font = UIFont.setBold(fontSize: 16.0)
   }
   
   private func getChannelMessages() {

@@ -281,22 +281,84 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tB0-yW-wg2">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="474"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGT-FM-Ik7">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhz-97-tsa">
+                                        <rect key="frame" x="260" y="10" width="50" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="qtC-VP-P3M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                        <state key="normal" title="send"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQV-WI-HoI">
+                                        <rect key="frame" x="10" y="10" width="240" height="30"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Start a new message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yDy-CF-Vp2">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="yDy-CF-Vp2" firstAttribute="top" secondItem="YQV-WI-HoI" secondAttribute="top" id="RPt-Me-e0D"/>
+                                            <constraint firstItem="yDy-CF-Vp2" firstAttribute="leading" secondItem="YQV-WI-HoI" secondAttribute="leading" id="SWm-q3-qJq"/>
+                                            <constraint firstAttribute="bottom" secondItem="yDy-CF-Vp2" secondAttribute="bottom" id="VaN-0T-LBD"/>
+                                            <constraint firstAttribute="trailing" secondItem="yDy-CF-Vp2" secondAttribute="trailing" id="tV3-we-xPG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="YQV-WI-HoI" firstAttribute="leading" secondItem="PGT-FM-Ik7" secondAttribute="leading" constant="10" id="8qw-Pu-wcg"/>
+                                    <constraint firstAttribute="height" constant="50" id="Dzd-Rn-dlQ"/>
+                                    <constraint firstItem="Qhz-97-tsa" firstAttribute="leading" secondItem="YQV-WI-HoI" secondAttribute="trailing" constant="10" id="X0A-T4-uYV"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qhz-97-tsa" secondAttribute="bottom" constant="10" id="dNa-m1-zV5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qhz-97-tsa" secondAttribute="trailing" constant="10" id="diN-oo-wPf"/>
+                                    <constraint firstItem="Qhz-97-tsa" firstAttribute="top" secondItem="PGT-FM-Ik7" secondAttribute="top" constant="10" id="q5W-Dx-3XU"/>
+                                    <constraint firstItem="YQV-WI-HoI" firstAttribute="top" secondItem="PGT-FM-Ik7" secondAttribute="top" constant="10" id="rV7-Pf-GQY"/>
+                                    <constraint firstAttribute="bottom" secondItem="YQV-WI-HoI" secondAttribute="bottom" constant="10" id="sRm-MG-8Cq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNw-4L-qCv">
+                                <rect key="frame" x="0.0" y="518" width="320" height="1"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="UN9-qW-Ja9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Xt-3d-D3i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tB0-yW-wg2" firstAttribute="top" secondItem="1Xt-3d-D3i" secondAttribute="top" id="Bor-wi-Zq2"/>
-                            <constraint firstItem="tB0-yW-wg2" firstAttribute="leading" secondItem="1Xt-3d-D3i" secondAttribute="leading" id="JyO-fm-iMk"/>
-                            <constraint firstItem="tB0-yW-wg2" firstAttribute="trailing" secondItem="1Xt-3d-D3i" secondAttribute="trailing" id="be2-Sj-rqL"/>
-                            <constraint firstItem="tB0-yW-wg2" firstAttribute="bottom" secondItem="1Xt-3d-D3i" secondAttribute="bottom" id="zQJ-T7-t6W"/>
+                            <constraint firstItem="PGT-FM-Ik7" firstAttribute="bottom" secondItem="1Xt-3d-D3i" secondAttribute="bottom" id="4j4-fF-brf"/>
+                            <constraint firstItem="tB0-yW-wg2" firstAttribute="leading" secondItem="1Xt-3d-D3i" secondAttribute="leading" id="6fo-8H-9oc"/>
+                            <constraint firstItem="PGT-FM-Ik7" firstAttribute="trailing" secondItem="1Xt-3d-D3i" secondAttribute="trailing" id="LQz-hi-dbV"/>
+                            <constraint firstItem="PGT-FM-Ik7" firstAttribute="leading" secondItem="1Xt-3d-D3i" secondAttribute="leading" id="YtQ-Wl-H0A"/>
+                            <constraint firstItem="sNw-4L-qCv" firstAttribute="leading" secondItem="1Xt-3d-D3i" secondAttribute="leading" id="aGk-eK-PTK"/>
+                            <constraint firstItem="PGT-FM-Ik7" firstAttribute="top" secondItem="tB0-yW-wg2" secondAttribute="bottom" id="e8y-EP-vG6"/>
+                            <constraint firstItem="tB0-yW-wg2" firstAttribute="trailing" secondItem="1Xt-3d-D3i" secondAttribute="trailing" id="eGL-Kd-3l6"/>
+                            <constraint firstItem="tB0-yW-wg2" firstAttribute="top" secondItem="1Xt-3d-D3i" secondAttribute="top" id="itZ-Hz-F0M"/>
+                            <constraint firstItem="sNw-4L-qCv" firstAttribute="top" secondItem="tB0-yW-wg2" secondAttribute="bottom" id="nI0-M4-X8C"/>
+                            <constraint firstItem="1Xt-3d-D3i" firstAttribute="trailing" secondItem="sNw-4L-qCv" secondAttribute="trailing" id="pg2-UZ-4hY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="is5-nS-5Q1"/>
                     <connections>
+                        <outlet property="btnSend" destination="Qhz-97-tsa" id="nFW-pG-bjr"/>
                         <outlet property="tblMessages" destination="tB0-yW-wg2" id="uWW-rp-qqr"/>
+                        <outlet property="txtvMessage" destination="yDy-CF-Vp2" id="m6z-Kr-XGo"/>
+                        <outlet property="viewFooter" destination="PGT-FM-Ik7" id="QBd-V0-aF6"/>
+                        <outlet property="viewFooterLineSeparator" destination="sNw-4L-qCv" id="sWt-Ie-hgm"/>
+                        <outlet property="viewMessageBg" destination="YQV-WI-HoI" id="LyR-U4-4Vm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbA-29-ZC1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -322,11 +384,17 @@
     </scenes>
     <resources>
         <image name="index-logo" width="107" height="96.5"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

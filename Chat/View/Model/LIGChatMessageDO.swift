@@ -1,5 +1,5 @@
 //
-//  LIGChatMessageVM.swift
+//  LIGChatMessageDO.swift
 //  Chat
 //
 //  Created by William S. Rena on 2/22/21.
