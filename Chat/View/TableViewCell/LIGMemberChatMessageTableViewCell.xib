@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Her-cU-l6S">
-                        <rect key="frame" x="10" y="10" width="329" height="176"/>
+                        <rect key="frame" x="10" y="10" width="332.5" height="176"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmc-h4-9z9">
-                                <rect key="frame" x="10" y="10" width="309" height="156"/>
+                                <rect key="frame" x="10" y="10" width="312.5" height="156"/>
                                 <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -29,6 +29,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="BVs-Er-vQP"/>
                             <constraint firstAttribute="bottom" secondItem="Dmc-h4-9z9" secondAttribute="bottom" constant="10" id="HEM-sb-qiy"/>
                             <constraint firstItem="Dmc-h4-9z9" firstAttribute="top" secondItem="Her-cU-l6S" secondAttribute="top" constant="10" id="KHw-nf-Y81"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="a5l-IU-y8D"/>
@@ -37,7 +38,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0y-3n-Vgz">
-                        <rect key="frame" x="10" y="191" width="329" height="15"/>
+                        <rect key="frame" x="10" y="191" width="332.5" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="Yeb-a9-sxg"/>
                         </constraints>
@@ -52,7 +53,7 @@
                     <constraint firstAttribute="bottom" secondItem="i0y-3n-Vgz" secondAttribute="bottom" constant="10" id="UC0-Yf-q5b"/>
                     <constraint firstItem="i0y-3n-Vgz" firstAttribute="trailing" secondItem="Her-cU-l6S" secondAttribute="trailing" id="ZA0-hq-kam"/>
                     <constraint firstItem="Her-cU-l6S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fkU-j7-uGd"/>
-                    <constraint firstAttribute="trailing" secondItem="Her-cU-l6S" secondAttribute="trailing" constant="35" id="oxN-iq-fUX"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Her-cU-l6S" secondAttribute="trailing" constant="20" id="oxN-iq-fUX"/>
                     <constraint firstItem="i0y-3n-Vgz" firstAttribute="top" secondItem="Her-cU-l6S" secondAttribute="bottom" constant="5" id="xdb-dy-cMe"/>
                 </constraints>
             </tableViewCellContentView>
