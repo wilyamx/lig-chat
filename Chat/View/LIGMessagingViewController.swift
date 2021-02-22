@@ -23,6 +23,9 @@ class LIGMessagingViewController: LIGViewController {
   
   let SEND_MESSAGE_MIN_HEIGHT: CGFloat = CGFloat(30.0)
   let SEND_MESSAGE_MAX_HEIGHT: CGFloat = CGFloat(160.0)
+  let SEND_MESSAGE_PLACEHOLDER: String = "Start a new message"
+  let SEND_MESSAGE_PLACEHOLDER_TEXTCOLOR: UIColor = UIColor.Theme.gray
+  let SEND_MESSAGE_TEXTCOLOR: UIColor = UIColor.Theme.gray
   
   public lazy var viewModel = LIGMessagingViewModel()
   
@@ -55,6 +58,18 @@ class LIGMessagingViewController: LIGViewController {
         operationName: "Sign up",
         changeViewName: "Login")
     })
+  }
+  
+  // MARK: - Actions
+  
+  @IBAction func btnSendAction(_ sender: Any) {
+    if let message = self.txtvMessage.text, message.count > 0 {
+      let validatedMessage = self.getValidatedMessage(message: message)
+      if validatedMessage.count > 0 &&
+        validatedMessage != SEND_MESSAGE_PLACEHOLDER {
+        self.sendMessage(message: message)
+      }
+    }
   }
   
   // MARK: - Private Methods
@@ -105,6 +120,9 @@ class LIGMessagingViewController: LIGViewController {
     self.viewMessageBg.layer.cornerRadius = LIGConstants.DEFAULT_CORNER_RADIUS
     self.viewMessageBg.backgroundColor = UIColor.Theme.textBgColor
     
+    self.txtvMessage.text = SEND_MESSAGE_PLACEHOLDER
+    self.txtvMessage.textColor = SEND_MESSAGE_PLACEHOLDER_TEXTCOLOR
+    self.txtvMessage.tintColor = SEND_MESSAGE_TEXTCOLOR
     self.txtvMessage.backgroundColor = .clear
     self.txtvMessage.font = UIFont.setRegular(fontSize: 14)
     self.txtvMessage.textColor = UIColor.Theme.gray
@@ -143,6 +161,16 @@ class LIGMessagingViewController: LIGViewController {
       self.messageHeightConstraint.constant = SEND_MESSAGE_MAX_HEIGHT
       self.txtvMessage.isScrollEnabled = true
     }
+  }
+  
+  private func getValidatedMessage(message: String) -> String {
+    return message.trimmingCharacters(in: .whitespacesAndNewlines)
+  }
+  
+  // MARK: - Messaging
+  
+  private func sendMessage(message: String) {
+    
   }
   
   /*
@@ -196,8 +224,8 @@ extension LIGMessagingViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    let data = self.messages[indexPath.row]
-//    DebugInfo.log(info: "\(DebugInfoKey.messaging.rawValue) selected a message \(data.message) (\(data.messageId)) at index (\(indexPath.row))")
+    let data = self.messages[indexPath.row]
+    LIGReference.appDelegate.log.info("\(DebugInfoKey.messaging.rawValue) selected a message :: \(data.message) at index (\(indexPath.row))")
   }
 }
 
