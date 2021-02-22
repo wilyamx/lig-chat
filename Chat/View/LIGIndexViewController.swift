@@ -23,7 +23,7 @@ class LIGIndexViewController: LIGViewController {
     self.viewContainer.backgroundColor = .clear
     
     self.lblApp.textColor = UIColor.Theme.darkGray
-    self.lblApp.font = UIFont.setBold(fontSize: 18.0)
+    self.lblApp.font = UIFont.setBold(fontSize: 24.0)
     self.lblApp.backgroundColor = .clear
     
     self.btnSignup.setTitleColor(.white, for: .normal)

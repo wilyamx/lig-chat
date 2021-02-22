@@ -17,3 +17,5 @@
 ## Testing the App
 
 1. Use credentials. User name: **Evaluator**, password: **88888888**
+1. The app will remember logged in user after signup or login when terminated.
+1.  

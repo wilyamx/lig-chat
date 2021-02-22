@@ -12,8 +12,6 @@
 		A221958925E15DFF00CC3C02 /* LIGIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221958825E15DFF00CC3C02 /* LIGIndexViewController.swift */; };
 		A221958E25E15E8B00CC3C02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A221958C25E15E8B00CC3C02 /* Main.storyboard */; };
 		A221959225E1642900CC3C02 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221959125E1642900CC3C02 /* UIFont+Extension.swift */; };
-		A221959525E16BA500CC3C02 /* LIGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221959425E16BA400CC3C02 /* LIGLoginViewController.swift */; };
-		A221959825E16BD300CC3C02 /* LIGSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221959725E16BD300CC3C02 /* LIGSignUpViewController.swift */; };
 		A221959B25E16F6200CC3C02 /* LIGAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221959A25E16F6200CC3C02 /* LIGAuthenticationViewController.swift */; };
 		A221959E25E1708900CC3C02 /* LIGStoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221959D25E1708900CC3C02 /* LIGStoryboardManager.swift */; };
 		A22195A125E170AA00CC3C02 /* LIGUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22195A025E170AA00CC3C02 /* LIGUserManager.swift */; };
@@ -51,8 +49,6 @@
 		A221958825E15DFF00CC3C02 /* LIGIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIGIndexViewController.swift; sourceTree = "<group>"; };
 		A221958D25E15E8B00CC3C02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A221959125E1642900CC3C02 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		A221959425E16BA400CC3C02 /* LIGLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGLoginViewController.swift; sourceTree = "<group>"; };
-		A221959725E16BD300CC3C02 /* LIGSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGSignUpViewController.swift; sourceTree = "<group>"; };
 		A221959A25E16F6200CC3C02 /* LIGAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGAuthenticationViewController.swift; sourceTree = "<group>"; };
 		A221959D25E1708900CC3C02 /* LIGStoryboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGStoryboardManager.swift; sourceTree = "<group>"; };
 		A22195A025E170AA00CC3C02 /* LIGUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGUserManager.swift; sourceTree = "<group>"; };
@@ -129,8 +125,6 @@
 				A2682A6B25E34A460039A86D /* TableViewCell */,
 				A221958825E15DFF00CC3C02 /* LIGIndexViewController.swift */,
 				A221958025E1592E00CC3C02 /* LIGViewController.swift */,
-				A221959425E16BA400CC3C02 /* LIGLoginViewController.swift */,
-				A221959725E16BD300CC3C02 /* LIGSignUpViewController.swift */,
 				A221959A25E16F6200CC3C02 /* LIGAuthenticationViewController.swift */,
 				A2527C2B25E26B13002D1596 /* LIGMessagingViewController.swift */,
 			);
@@ -386,8 +380,6 @@
 				A2527C3025E28B78002D1596 /* LIGMessagingViewModel.swift in Sources */,
 				A22195A125E170AA00CC3C02 /* LIGUserManager.swift in Sources */,
 				A22195A825E17E4D00CC3C02 /* LIGConstants.swift in Sources */,
-				A221959825E16BD300CC3C02 /* LIGSignUpViewController.swift in Sources */,
-				A221959525E16BA500CC3C02 /* LIGLoginViewController.swift in Sources */,
 				A2682A6E25E34AEB0039A86D /* LIGDisplayObject.swift in Sources */,
 				A2527C1725E224C2002D1596 /* LIGDataSourceProtocol.swift in Sources */,
 				A221959E25E1708900CC3C02 /* LIGStoryboardManager.swift in Sources */,
