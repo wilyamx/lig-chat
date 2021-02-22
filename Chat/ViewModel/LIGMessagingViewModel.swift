@@ -24,11 +24,11 @@ class LIGMessagingViewModel: LIGViewModel {
   
   func getMessages(completion: @escaping ([LIGChatMessageDO]) -> Void) {
     self.messages.removeAll()
-    self.messages.append(LIGChatMessageDO(userId: 0, name: "May", message: "Hi Ken, I just sent the document to you on mail. Plz check it!"))
-    self.messages.append(LIGChatMessageDO(userId: 1, name: "Williamx", message: "Thank you May! It was great."))
-    self.messages.append(LIGChatMessageDO(userId: 1, name: "Williamx", message: "I just checked it. Thanks!"))
-    self.messages.append(LIGChatMessageDO(userId: 0, name: "Mark", message: "Hi guys, what's up?"))
-    self.messages.append(LIGChatMessageDO(userId: 0, name: "April", message: "Hi Mark, I stay Cebu now"))
+    self.messages.append(LIGChatMessageDO(userId: 1, name: "May", message: "Hi Ken, I just sent the document to you on mail. Plz check it!"))
+    self.messages.append(LIGChatMessageDO(userId: 4, name: "Evaluator", message: "Thank you May! It was great."))
+    self.messages.append(LIGChatMessageDO(userId: 4, name: "Evaluator", message: "I just checked it. Thanks!"))
+    self.messages.append(LIGChatMessageDO(userId: 2, name: "Mark", message: "Hi guys, what's up?"))
+    self.messages.append(LIGChatMessageDO(userId: 3, name: "April", message: "Hi Mark, I stay Cebu now"))
    
     completion(self.messages)
   }

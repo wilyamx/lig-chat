@@ -45,6 +45,8 @@ class LIGDatabaseManager {
     // Now that we've told Realm how to handle the schema change, opening the file
     // will automatically perform the migration
     self.db = try! Realm()
+    
+    self.initializeData()
   }
   
   public func dbPath() -> String {
@@ -53,5 +55,27 @@ class LIGDatabaseManager {
       return temp.path
     }
     return ""
+  }
+  
+  // MARK: - Private Methods
+  
+  private func initializeData() {
+    // Initial users
+    if self.db.objects(LIGUserModel.self).count == 0 {
+      let users: [LIGUserSchema] = [
+        LIGUserSchema(id: 1, username: "May", password: "11111111", isLogin: false, isActive: false),
+        LIGUserSchema(id: 2, username: "Mark", password: "22222222", isLogin: false, isActive: false),
+        LIGUserSchema(id: 3, username: "April", password: "33333333", isLogin: false, isActive: false),
+        LIGUserSchema(id: 4, username: "Evaluator", password: "88888888", isLogin: false, isActive: false)
+      ]
+          
+      try! self.db.write {
+        for user in users {
+          self.db.add(LIGUserModel(user: user))
+        }
+        LIGReference.appDelegate.log.info("\(DebugInfoKey.realmDb.rawValue) Created Initial (\(users.count)) Users!")
+      }
+    }
+    
   }
 }
