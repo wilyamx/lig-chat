@@ -167,10 +167,39 @@ class LIGMessagingViewController: LIGViewController {
     return message.trimmingCharacters(in: .whitespacesAndNewlines)
   }
   
+  private func prepareForNextMessage() {
+      // prepare ui for next send of message
+      self.txtvMessage.text = SEND_MESSAGE_PLACEHOLDER
+      self.txtvMessage.textColor = SEND_MESSAGE_PLACEHOLDER_TEXTCOLOR
+  
+      // cursor position
+      let beginPosition = self.txtvMessage.beginningOfDocument
+      self.txtvMessage.selectedTextRange = self.txtvMessage.textRange(from: beginPosition,
+                                                                      to: beginPosition)
+      self.autoResizeHeightSendMessage()
+  }
+  
+  private func scrollToBottomRow(datasource: [Any]) {
+    guard datasource.count > 0 else { return }
+    let indexPath = IndexPath(row: datasource.count - 1, section: 0)
+    self.tblMessages.scrollToRow(at: indexPath, at: .bottom, animated: false)
+  }
+  
   // MARK: - Messaging
   
   private func sendMessage(message: String) {
+    let validatedMessage = self.getValidatedMessage(message: message)
     
+    self.viewModel.sendMessage(
+      message: validatedMessage,
+      completion: { message in
+        DispatchQueue.main.async {
+          self.messages.append(message)
+          self.tblMessages.reloadData()
+          self.scrollToBottomRow(datasource: self.messages)
+          self.prepareForNextMessage()
+        }
+    })
   }
   
   /*
@@ -231,6 +260,61 @@ extension LIGMessagingViewController: UITableViewDelegate {
 
 extension LIGMessagingViewController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
-      self.autoResizeHeightSendMessage()
+    self.autoResizeHeightSendMessage()
+  }
+  
+  func textViewDidEndEditing(_ textView: UITextView) {
+    if textView.text == "" {
+      self.txtvMessage.text = SEND_MESSAGE_PLACEHOLDER
+      self.txtvMessage.textColor = SEND_MESSAGE_PLACEHOLDER_TEXTCOLOR
+      
+      // cursor position
+      let beginPosition = textView.beginningOfDocument
+      textView.selectedTextRange = textView.textRange(from: beginPosition,
+                                                      to: beginPosition)
+    }
+  }
+  
+  func textView(_ textView: UITextView,
+                shouldChangeTextIn range: NSRange,
+                replacementText text: String) -> Bool {
+  
+    // detect for return key
+    if text == "\n" {
+      if textView.text == SEND_MESSAGE_PLACEHOLDER {
+          return false
+      }
+      else if textView.text.count > 0 {
+        if self.getValidatedMessage(message: textView.text).count == 0 {
+          return false
+        }
+        
+        self.sendMessage(message: textView.text)
+        return false
+      }
+    }
+    
+    // detect for backspace
+    else if text == "" {
+      if textView.text.count <= 1 || textView.text == SEND_MESSAGE_PLACEHOLDER {
+          self.txtvMessage.text = SEND_MESSAGE_PLACEHOLDER
+          self.txtvMessage.textColor = SEND_MESSAGE_PLACEHOLDER_TEXTCOLOR
+          
+          // cursor position
+          let beginPosition = textView.beginningOfDocument
+          textView.selectedTextRange = textView.textRange(from: beginPosition,
+                                                          to: beginPosition)
+      }
+    }
+    
+    // valid key inputs
+    else {
+      if textView.text == SEND_MESSAGE_PLACEHOLDER {
+          textView.text = ""
+          textView.textColor = SEND_MESSAGE_TEXTCOLOR
+      }
+    }
+    return true
   }
 }
+

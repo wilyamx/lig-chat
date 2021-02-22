@@ -38,4 +38,18 @@ class LIGMessagingViewModel: LIGViewModel {
    
     completion(self.messages)
   }
+  
+  func sendMessage(
+    message: String,
+    completion: @escaping (LIGChatMessageDO) -> Void) {
+      if let loginUser = self.getLoginUser() {
+        let newMessage = LIGChatMessageDO(
+          userId: loginUser.id ?? 0,
+          name: loginUser.username ?? "",
+          message: message)
+        
+        completion(newMessage)
+      }
+  }
+  
 }
