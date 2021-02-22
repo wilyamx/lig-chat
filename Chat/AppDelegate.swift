@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 import SwiftyBeaver
 
 @main
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     console.format = "$L: $M $X"
     console.minLevel = .info
     self.log.addDestination(console)
+    
+    IQKeyboardManager.shared.enable = true
     
     // initialize the local data storage
     // log the location of realm database
