@@ -4,7 +4,7 @@
 
 1. **MVVM** Design Pattern
 1. **Cocoapods** for some 3rd-party libraries
-1. **Realm Database** for local storage
+1. **Realm Database** for local persistent data storage
 1. **Logging to XCode console** for easy debugging 
 
 ## XCode Project Initial Setup
