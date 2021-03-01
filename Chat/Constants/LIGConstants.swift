@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 struct LIGReference {
   static let appDelegate = UIApplication.shared.delegate as! AppDelegate
 }
