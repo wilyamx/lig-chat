@@ -16,11 +16,13 @@ And this app has no functionality for making rooms.
 Any users will go to the chat room after login.
 
 ## Rules
+
 + Please use JAVA or Swift
 + You can use any libraries and frameworks
 + You cannot use any plugins
 
 ## Evaluation criterion
+
 + Any tiny difference from the design, even a few pixel difference, may cause a score deduction.
 + The implementation meets the specification or not
 + Readability and maintainability of the source code
@@ -29,6 +31,8 @@ Any users will go to the chat room after login.
 
 - "Sign up" button ... transfer to Sign up page
 - "Login" button ... transfer to Login page
+
+![Index](images/index.jpg)
 
 ## Login
 
@@ -39,11 +43,17 @@ Any users will go to the chat room after login.
 	3. The number of characters in user name and password is 8 to 16. If inputed values by user doesn't follow it, the error message will be shown.
 - The text "Sign up" with an underline is the link for transferring to Sign up page.
 
+![Login](images/login.jpg)
+![Login-Error](images/login-error.jpg)
+
 ## Sign up
 
 - If users click the button "Sign up" with correct values, the Sign up will be succeeded and users transfer to chat page. And the data of user name and password will be recorded to DB.
 - Error cases are 3 patterns. And they are same to error messages in Login page.
 - The text "Login" with an underline is the link for transferring to Login page.
+
+![Signup](images/sign-up.jpg)
+![Signup-Error](images/sign-up-error.jpg)
 
 ## Chat specification
 
@@ -54,6 +64,8 @@ Any users will go to the chat room after login.
 - User's own post is always located the right side.
 - Other member's post is always located the left side.
 - When users click the button "Log out", they will log out and transfer to sign-up page.
+
+![Signup](images/chat.jpg)
 
 ## Featured List
 
